@@ -1,0 +1,259 @@
+* {
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f7f1e6;
+    opacity: 0.7;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;         
+    flex-direction: column; 
+    min-height: 100vh;    
+}
+body.loaded {
+    opacity: 1;
+}
+
+/* HEADER & NAVBAR */
+.top-rectangle {
+    width: 100%;
+    height: 45px;           
+    background: #4d2b14;    
+}
+
+.header {
+    display: flex;
+    justify-content: center;  
+    align-items: center;     
+    margin: 20px 0; 
+}
+
+.navbar {
+    background: #e6d9c8;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;    
+    padding: 0;              
+    font-weight: bold;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #3a2c17;
+    padding: 15px 30px;      
+    background: #e6d9c8;
+    display: flex;           
+    font-size: 25px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;      
+    transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out; 
+}
+
+/* PERUBAHAN 1: Lebar disamakan dengan style.css (750px) */
+.navbar a.tes {
+    width: 750px; 
+    font-weight: medium;
+}
+
+/* --- SECTION PROMO --- */
+.promo-banner {
+    position: relative;
+    width: 100%;
+    flex: 1;           
+    min-height: 650px; /* Sedikit dikurangi agar tidak terlalu tinggi */
+    background-color: #d8c8b4;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background Lengkungan Putih */
+.promo-bg-shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65%; 
+    height: 100%;
+    background-color: #f7f1e6; 
+    border-top-left-radius: 500px; 
+    border-bottom-left-radius: 100px;
+    z-index: 1; 
+}
+
+/* Background Biji Kopi*/
+.bean-bg { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bean.png'); 
+    background-size: cover;  
+    background-position: center;
+    z-index: 2; 
+    pointer-events: none;
+    opacity: 0.9;
+}
+
+
+
+/* Container Konten Utama */
+.promo-content {
+    position: relative;
+    z-index: 3;
+    width: 100%; 
+    max-width: 1400px; /* Membatasi lebar konten agar tidak terlalu melebar */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 50px; 
+}
+
+
+.product-item {
+    display: flex;
+    align-items: center;
+}
+
+/* PERUBAHAN 2: Ukuran gambar diperkecil (750px -> 500px) agar proporsional */
+.product-item img {
+    width: 540px; 
+    transition: transform 0.3s ease;
+    margin-left: -115px;
+}
+
+.big-pack {
+    margin-top: 10px;
+    transform: rotate(-3deg); 
+    margin-right: -20px;
+    filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.4));
+}
+
+/* PERUBAHAN 3: Margin negatif disesuaikan karena gambar lebih kecil */
+.small-pack {
+    margin-top: -250px; /* Sebelumnya -450px */
+    transform: rotate(3deg);
+    margin-left: -10px;
+    filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.4));
+}
+
+/* Hover Efek pada Gambar */
+.promo-img:hover {
+    transform: scale(1.05) rotate(0deg); /* Reset rotasi sedikit saat hover */
+}
+
+
+.price-row {
+    display: flex;          
+    flex-direction: row;
+    align-items: baseline; 
+    gap: 15px;       
+}
+
+
+/* PERUBAHAN 4: Posisi tag harga disesuaikan */
+.tag-left {
+    display: flex;
+    flex-direction: column;
+    margin-top: 300px;    /* Sebelumnya 500px */
+    margin-left: -80px;   
+    z-index: 10;           
+}
+
+.tag-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    margin-bottom: 300px; /* Sebelumnya 500px */
+    margin-right: -30px;    
+    z-index: 10;
+}
+
+/* PERUBAHAN 5: Ukuran Font disesuaikan agar tidak "Jumbo" */
+.price-strikethrough1 {
+    font-size: 35px; /* Sebelumnya 60px */
+    font-weight: 700;
+    color: #1a1a1a;
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
+    margin-left: 44px;
+}
+
+.a{
+    margin-left: 43px;
+}
+
+.b{
+    margin-left: -40px;
+}
+
+.price-strikethrough2 {
+    font-size: 35px; /* Sebelumnya 60px */
+    font-weight: 700;
+    color: #1a1a1a;
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
+    margin-left: 0px;
+}
+
+.tag-left h2 {
+    font-size: 34px; /* Sebelumnya 55px */
+    margin-top: -5px;
+}
+
+.tag-left h2 .bold {
+    font-weight: 700;  
+}
+
+.tag-left h2 .regular {
+    font-weight: 400;  
+}
+
+.tag-right h2 {
+    font-size: 34px; /* Sebelumnya 55px */
+    margin-top: -5px;
+}
+
+.tag-right h2 .bold {
+    font-weight: 700;  
+}
+
+.tag-right h2 .regular {
+    font-weight: 400;  
+}
+
+.price-final {
+    font-size: 60px; /* Sebelumnya 100px */
+    font-weight: 800;
+    color: #C71616;
+    line-height: 1;
+    text-shadow: 2px 2px 0px rgba(255,255,255,0.5); 
+}
+
+/* FOOTER */
+.footer {
+    margin-top: auto;
+    background: #f4ebdc;
+    padding: 25px 0;
+    display: flex;
+    justify-content: left;
+    padding-left: 50px;
+    gap: 60px;
+    font-size: 14px;
+    align-items: center;
+}
+.footer-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.footer-icon {
+    width: 28px;
+    height: auto;
+}
